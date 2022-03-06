@@ -1,0 +1,40 @@
+
+
+///////////////////////////////////////////
+vercnel java anunov bolor itemner@ cankic
+  List<WebElement> result = driver.findElements(By.cssSelector
+                ("span[class ^= 'a-size-base-plus']"));
+        for (int i = 0; i < result.size(); i++){
+            if (result.get(i).getText().contains("Java")){
+               // Thread.sleep(2000);
+                System.out.println("LAVA LAVA -------- " + result.get(i).getText());
+            }
+        }
+        /////////////////////////
+
+         openTab.click();
+            ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+            driver.switchTo().window(tabs.get(1));
+            driver.close();
+            driver.switchTo().window(tabs.get(0));
+
+
+            ////////////////////////
+
+            public void openNewWindow() {
+                openWindowButton.click();
+                String parent = driver.getWindowHandle();
+                Set<String> s = driver.getWindowHandles();
+                Iterator<String> iterator = s.iterator();
+                while (iterator.hasNext()) {
+                    String childWindow = iterator.next();
+
+                    if (!parent.equals(childWindow)){
+                        driver.switchTo().window(childWindow);
+                        driver.close();
+                    }
+                }
+            }
+
+            ////////////////////////
+
