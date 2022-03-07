@@ -41,6 +41,9 @@ public class PracticeTest extends SeleniumBase {
         practicePage.sendHiddenText();
         practicePage.setHideBtn();
         practicePage.showHiddenText();
+        practicePage.setMouseHower();
+        practicePage.mouseHoverReload();
+        practicePage.thanks();
 
 
     }

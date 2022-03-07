@@ -11,7 +11,8 @@ vercnel java anunov bolor itemner@ cankic
             }
         }
         /////////////////////////
-
+        Pakum a nor tab@
+/////
          openTab.click();
             ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
             driver.switchTo().window(tabs.get(1));
@@ -20,7 +21,8 @@ vercnel java anunov bolor itemner@ cankic
 
 
             ////////////////////////
-
+Pakum a nor windos@
+/////////////////
             public void openNewWindow() {
                 openWindowButton.click();
                 String parent = driver.getWindowHandle();
@@ -38,3 +40,46 @@ vercnel java anunov bolor itemner@ cankic
 
             ////////////////////////
 
+
+            pakum a alert@  dismisov
+            /////////////////
+confimAlert.click();
+        Alert alert = driver.switchTo().alert();
+        String alertMessage = driver.switchTo().alert().getText();
+        System.out.println("Alert Dismiss " + alertMessage);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        alert.dismiss();
+    }
+
+
+//////////////////////////////////////
+pakuma a alert@ accept-ov
+
+ public void setAlertBtn() {
+        alertBtn.click();
+        Alert alert = driver.switchTo().alert();
+        String alertMessage = driver.switchTo().alert().getText();
+        System.out.println("Alert Accepting " + alertMessage);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        alert.accept();
+    }
+
+
+    ////////////////////////////////////////////
+    mouse Hover  kam LILI Hover
+    ///////////////////////
+        public void setMouseHower() {
+            Actions actions = new Actions(driver);
+            WebElement mousehover = driver.findElement(By.id("mousehover"));
+            actions.moveToElement(mousehover).build().perform();
+        }

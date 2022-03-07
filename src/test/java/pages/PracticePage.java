@@ -5,10 +5,12 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -73,6 +75,14 @@ public class PracticePage extends SeleniumBase {
 
     @FindBy(id = "show-textbox")
     private WebElement showText;
+
+
+    @FindBy(id = "mousehover")
+    private WebElement mouseHower;
+
+    @FindBy(linkText = "Reload")
+    private WebElement howerRelod;
+
 
     ////////////////////////////
     public void clickOnRadioBtn3() {
@@ -207,6 +217,24 @@ public class PracticePage extends SeleniumBase {
         showText.click();
     }
 
+    public void setMouseHower() {
+        Actions actions = new Actions(driver);
+        WebElement mousehover = driver.findElement(By.id("mousehover"));
+        actions.moveToElement(mousehover).build().perform();
+    }
+
+
+    public void mouseHoverReload() {
+
+        WebElement mouseHower = driver.findElement(By.linkText("Reload"));
+        mouseHower.click();
+
+        System.out.println("Reloaded and finished test ");
+    }
+
+    public void thanks(){
+        System.out.println("THANKS VERY MUCH ");
+    }
 
 }
 
