@@ -15,8 +15,8 @@ public class PracticeTest extends SeleniumBase {
     public void verifyRadioBtnFunction() throws InterruptedException {
         practicePage = new PracticePage(driver);
         driver.get("https://rahulshettyacademy.com/AutomationPractice/");
-        practicePage.clickOnRadioBtn();
 
+        practicePage.clickOnRadioBtn();
         practicePage.clickOnRadioBtn3();
         practicePage.clickOnRadioBtn1();
         practicePage.setCountry();
@@ -36,13 +36,18 @@ public class PracticeTest extends SeleniumBase {
         practicePage.dSetAlertBtn();
         String expectedText = "Advanced Selenium Framework Pageobject, TestNG, Maven, Jenkins,C";
         String actualText = practicePage.getTableDataContent(9, 1);
-
         assertEquals(expectedText, actualText, "Texts doesn't matching -> " + expectedText + " doesn't matching " + actualText);
+        //
+        String expecctdTextt = "Bengaluru";
+        String actualTextt = practicePage.getFixedTableCont(9, 4);
+        assertEquals(expecctdTextt, actualTextt, "Texts doesn't matching -> " + expecctdTextt + " doesn't matching " + actualTextt);
+
         practicePage.sendHiddenText();
         practicePage.setHideBtn();
         practicePage.showHiddenText();
         practicePage.setMouseHower();
-        practicePage.mouseHoverReload();
+        practicePage.mouseHoverTop();
+        //practicePage.mouseHoverReload();
         practicePage.thanks();
 
 

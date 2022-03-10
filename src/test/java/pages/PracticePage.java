@@ -202,6 +202,19 @@ public class PracticePage extends SeleniumBase {
         return tableData.get(tdIndexToGet).getText();
     }
 
+    //
+    private int getFixedTabel(int row, int colum) {
+        return 4 * (row - 1) + colum;
+    }
+
+    public String getFixedTableCont(int row, int colum) {
+        int tdinex = getFixedTabel(row, colum);
+
+        System.out.println(tdinex + " index From Fixed Table ");
+        return tableData.get(tdinex).getText();
+    }
+
+
 
     public void sendHiddenText() {
         hidenText.sendKeys("ACA QA Tigran");
@@ -231,8 +244,13 @@ public class PracticePage extends SeleniumBase {
 
         System.out.println("Reloaded and finished test ");
     }
+    public void mouseHoverTop(){
+        WebElement mouseHower= driver.findElement(By.linkText("Top"));
+        mouseHower.click();
+        System.out.println("Mouse Hover is done and Top is clicked ");
+    }
 
-    public void thanks(){
+    public void thanks() {
         System.out.println("THANKS VERY MUCH ");
     }
 
